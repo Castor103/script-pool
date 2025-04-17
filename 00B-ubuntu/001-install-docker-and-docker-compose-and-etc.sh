@@ -25,17 +25,17 @@ VERSION=$(curl --silent https://api.github.com/repos/docker/compose/releases/lat
 DESTINATION=/usr/local/bin/docker-compose
 sudo curl -L https://github.com/docker/compose/releases/download/${VERSION}/docker-compose-$(uname -s)-$(uname -m) -o $DESTINATION
 sudo chmod 755 $DESTINATION
-ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo ln -sf /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose --version
 
 
 ############################################
 # 자주 사용하는 패키지 설치
 ############################################
-apt install -y net-tools iputils-ping iproute2 git wget vim make
+sudo apt install -y net-tools iputils-ping iproute2 git wget vim make
 
 
 ############################################
 # git-cli 설치
 ############################################
-apt install -y gh
+sudo  apt install -y gh
